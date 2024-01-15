@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommender System</title>
+</head>
+<body>
+    <h1>Movie Recommender System</h1>
+    <form method="POST" action="/">
+        <label for="selected_movie">Type or select a movie:</label>
+        <input type="text" list="movie_list" name="selected_movie" id="selected_movie" required>
+        <datalist id="movie_list">
+            {% for movie in movie_list %}
+                <option value="{{ movie }}">
+            {% endfor %}
+        </datalist>
+        <button type="submit">Show Recommendation</button>
+    </form>
+
+    {% if selected_movie %}
+        <h2>Selected Movie: {{ selected_movie }}</h2>
+        {% for i in range(5) %}
+            <div>
+                <h3>{{ recommended_movie_names[i] }}</h3>
+                <img src="{{ recommended_movie_posters[i] }}" alt="{{ recommended_movie_names[i] }} Poster">
+                <form method="POST" action="/">
+                    <input type="hidden" name="selected_movie" value="{{ selected_movie }}">
+                    <button type="submit" name="watched_button" value="{{ i }}">Mark as Watched</button>
+                </form>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% for watched_index in watched_indices %}
+        <p>Watched {{ watched_index + 1 }}</p>
+    {% endfor %}
+</body>
+</html>

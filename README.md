@@ -1,15 +1,28 @@
-# Content-Based-Movie-Recommender-System-with-sentiment-analysis-using-AJAX
+# Content-Based-Movie-Recommender-System
 
 ![Python](https://img.shields.io/badge/Python-3.8-blueviolet)
 ![Framework](https://img.shields.io/badge/Framework-Flask-red)
 ![Frontend](https://img.shields.io/badge/Frontend-HTML/CSS/JS-green)
 ![API](https://img.shields.io/badge/API-TMDB-fcba03)
 
-Content Based Recommender System recommends movies similar to the movie user likes and analyses the sentiments on the reviews given by the user for that movie.
+Content-Based Recommender System recommends movies similar to the movies the user likes.
 
-The details of the movies(title, genre, runtime, rating, poster, etc) are fetched using an API by TMDB, https://www.themoviedb.org/documentation/api, and using the IMDB id of the movie in the API, I did web scraping to get the reviews given by the user in the IMDB site using `beautifulsoup4` and performed sentiment analysis on those reviews.
+Example of Netflix Recommendation System: I want to see movies like Justice League.
 
-Don't worry if the movie that you are looking for is not auto-suggested. Just type the movie name and click on "enter". You will be good to go eventhough if you made some typo errors.
+   ![image](https://github.com/yashwanthreddy7178/Movies-Recommendation-system/assets/75927870/cfc54dc3-1e58-48fc-b39a-e0d717e7cf39)
+
+The recommended movies are:
+
+   ![image](https://github.com/yashwanthreddy7178/Movies-Recommendation-system/assets/75927870/5183274a-a852-41b8-9867-b3a65547e764)
+
+But the problem here is that i have already watched all movies shown here. Netflix knows that i have watched these movies so, why don't it excludes movies which has already watched because nobody wants to see a movie which is already watched. 
+To overcome this problem i just implemented a watched button in my application under each movie. If i click the button the movie will disappear and a new movie will be added to the recommendation. By this i can watch new movies which are similar to the selected movie which have not watched by the user.
+
+
+
+The details of the movie title and poster are fetched using an API by TMDB, https://www.themoviedb.org/documentation/api
+
+Don't worry if the movie that you are looking for is not auto-suggested. Just type the movie name and click on "enter". You will be good to go even if you made some typo errors.
 
 ## How to get the API key?
 
